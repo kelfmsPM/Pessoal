@@ -253,7 +253,7 @@ const linhas = [
   {
     nome:'Aquisição & Analytics', cor:'#3568D4',
     estacoes:[
-      {id:'intercom', nome:'Intercom'},
+      {id:'intercom', nome:'Intercom', status:2},
       {id:'pixel', nome:'Pixel Google'},
     ]
   },
@@ -299,7 +299,7 @@ function allStations(){
   });
   return list;
 }
-allStations().forEach(e=> state[e.id] = 0);
+allStations().forEach(e=> state[e.id] = e.status || 0);
 
 function renderStats(){
   const total = allStations().length;
